@@ -1,44 +1,44 @@
 # IELTS Writing Evaluation API
 
-API RESTful đơn giản sử dụng Node.js và OpenAI để chấm điểm bài viết IELTS.
+A simple RESTful API using Node.js and OpenAI to score IELTS writing essays.
 
-## Cài đặt
+## Installation
 
-1. Clone repository:
+1. Clone the repository:
 
 ```bash
 git clone <repository-url>
 cd <repository-folder>
 ```
 
-2. Cài đặt các thư viện:
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Tạo file .env và thêm API key của OpenAI:
+3. Create a .env file and add your OpenAI API key:
 
 ```
 OPENAI_API_KEY=your_openai_api_key_here
 PORT=3000
 ```
 
-## Chạy ứng dụng
+## Running the Application
 
 ```bash
-# Chạy ở chế độ development với nodemon
+# Run in development mode with nodemon
 npm run dev
 
-# Hoặc chạy ở chế độ production
+# Or run in production mode
 npm start
 ```
 
-Server sẽ chạy tại `http://localhost:3000`
+The server will run at `http://localhost:3000`
 
 ## API Endpoints
 
-### Chấm điểm bài viết IELTS
+### Evaluate IELTS Writing
 
 ```
 POST /api/ielts/evaluate
@@ -48,9 +48,9 @@ POST /api/ielts/evaluate
 
 ```json
 {
-  "essay": "Nội dung bài viết IELTS cần chấm điểm",
-  "taskType": "task1", // hoặc "task2"
-  "question": "Đề bài IELTS"
+  "essay": "Content of the IELTS essay to be evaluated",
+  "taskType": "task1", // or "task2"
+  "question": "IELTS question prompt"
 }
 ```
 
@@ -62,43 +62,43 @@ POST /api/ielts/evaluate
   "criteria": {
     "taskAchievement": {
       "score": 7.0,
-      "feedback": "Phản hồi chi tiết về Task Achievement",
-      "examples": ["Ví dụ 1", "Ví dụ 2"],
-      "suggestions": ["Gợi ý cải thiện 1", "Gợi ý cải thiện 2"]
+      "feedback": "Detailed feedback on Task Achievement",
+      "examples": ["Example 1", "Example 2"],
+      "suggestions": ["Improvement suggestion 1", "Improvement suggestion 2"]
     },
     "coherenceAndCohesion": {
       "score": 7.0,
-      "feedback": "Phản hồi chi tiết về Coherence and Cohesion",
-      "examples": ["Ví dụ 1", "Ví dụ 2"],
-      "suggestions": ["Gợi ý cải thiện 1", "Gợi ý cải thiện 2"]
+      "feedback": "Detailed feedback on Coherence and Cohesion",
+      "examples": ["Example 1", "Example 2"],
+      "suggestions": ["Improvement suggestion 1", "Improvement suggestion 2"]
     },
     "lexicalResource": {
       "score": 7.0,
-      "feedback": "Phản hồi chi tiết về Lexical Resource",
-      "examples": ["Ví dụ 1", "Ví dụ 2"],
-      "suggestions": ["Gợi ý cải thiện 1", "Gợi ý cải thiện 2"]
+      "feedback": "Detailed feedback on Lexical Resource",
+      "examples": ["Example 1", "Example 2"],
+      "suggestions": ["Improvement suggestion 1", "Improvement suggestion 2"]
     },
     "grammaticalRangeAndAccuracy": {
       "score": 7.0,
-      "feedback": "Phản hồi chi tiết về Grammatical Range and Accuracy",
-      "examples": ["Ví dụ 1", "Ví dụ 2"],
-      "suggestions": ["Gợi ý cải thiện 1", "Gợi ý cải thiện 2"]
+      "feedback": "Detailed feedback on Grammatical Range and Accuracy",
+      "examples": ["Example 1", "Example 2"],
+      "suggestions": ["Improvement suggestion 1", "Improvement suggestion 2"]
     }
   },
-  "summary": "Tóm tắt đánh giá tổng thể"
+  "summary": "Overall evaluation summary"
 }
 ```
 
-## Test với Postman
+## Testing with Postman
 
-1. Mở Postman
-2. Tạo request POST mới đến `http://localhost:3000/api/ielts/evaluate`
-3. Trong tab Body, chọn raw và JSON
-4. Nhập request body theo định dạng ở trên
-5. Gửi request và xem kết quả
+1. Open Postman
+2. Create a new POST request to `http://localhost:3000/api/ielts/evaluate`
+3. In the Body tab, select raw and JSON
+4. Enter the request body according to the format above
+5. Send the request and view the results
 
-## Lưu ý
+## Notes
 
-- API sử dụng model GPT-4o của OpenAI để đánh giá bài viết
-- Đảm bảo API key của OpenAI có đủ credit để sử dụng model GPT-4o
-- Kết quả đánh giá có thể khác với đánh giá của giám khảo IELTS thực tế
+- Make sure your OpenAI API key is valid and has sufficient quota
+- The API uses the GPT-4o model for evaluation
+- The evaluation criteria follow the official IELTS Writing assessment criteria
