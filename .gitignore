@@ -16,11 +16,9 @@ yarn-error.log
 .vscode/
 *.sublime-project
 *.sublime-workspace
+.clinerules/
+.trae/
 
 # OS
 .DS_Store
 Thumbs.db
-
-# IDE
-.clinerules/
-.trae/
